@@ -2,7 +2,7 @@ __author__ = 'bison'
 
 import sys
 
-inputFile = 'google_logo11w.png'
+inputFile = 'walk-dark-light-5.jpg'
 outputFile = 'tmp.png'
 imageX = 255
 imageY = 255
