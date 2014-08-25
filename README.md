@@ -11,12 +11,12 @@ This tiny script generates fancy Images from ANY given file.
 
 ## HOW TO USE ##
 
-Open a terminal and go into the folder where this script is.
+Open a terminal and go into the folder where this script is,
 
-Then just run:
+then just run:
 >    python startTerminal if=mySuperFile.sh of=fancy_image_of_file.png
 
-Sure, you can sue any fullpath
+Sure, you can use any fullpath:
 >    python startTerminal if=/home/mysuperuser/bigFile.iso of=/home/images/fancy_image_of_file.png
 
 you can set the pixel size with:
