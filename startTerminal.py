@@ -7,6 +7,7 @@ outputFile = 'createdImages/tmp.png'
 imageX = 255
 imageY = 255
 pixelSize = 10
+dpi = -1
 for arg in sys.argv:
 	if arg == '--help':
 		f = open('README.md')
@@ -23,10 +24,12 @@ for arg in sys.argv:
 		imageY = int(arg.replace('imageY=', ''))
 	elif arg.startswith('pixelSize='):
 		pixelSize = int(arg.replace('pixelSize=', ''))
+	elif arg.startswith('dpi='):
+		dpi = int(arg.replace('dpi=', ''))
 
 import core
 
-coreWorker = core.core(imageX, imageY, pixelSize)
+coreWorker = core.core(imageX, imageY, pixelSize, dpi)
 
 coreWorker.fromFile(inputFile)
 coreWorker.saveImage(outputFile)

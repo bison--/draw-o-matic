@@ -47,3 +47,7 @@ if you want a LARGER Image, just use:
 * imageX= imageY=
   * the X and Y size/dimensions of the final Image
   * default is 255x255
+
+* dpi=
+  * set the dpi
+  * default is -1 for unset

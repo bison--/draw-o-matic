@@ -5,12 +5,13 @@ import ImageDraw
 
 class core(object):
 
-	def __init__(self, imageX, imageY, pixelSize):
+	def __init__(self, imageX, imageY, pixelSize, dpi):
 		self.imageX = imageX
 		self.imageY = imageY
 		self.pixelSize = pixelSize
 		self.img = Image.new( 'RGB', (imageX, imageY), "black") # create a new black image
 		self.pixels = self.img.load() # create the pixel map
+		self.dpi = dpi
 
 	def getColorTupleFromBytes(self, bytes3):
 		color = (ord(bytes3[0]), ord(bytes3[1]), ord(bytes3[2]))
@@ -54,4 +55,9 @@ class core(object):
 	def saveImage(self, savePath=''):
 		if not savePath.lower().endswith('.png'):
 			savePath += '.png'
-		self.img.save(savePath, 'PNG')
+		
+		# 72 is probably the default value?!
+		if self.dpi > 0:
+			self.img.save(savePath, 'PNG', dpi=(self.dpi, self.dpi))
+		else:
+			self.img.save(savePath, 'PNG')
