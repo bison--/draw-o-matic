@@ -32,13 +32,13 @@ if you want a LARGER Image, just use:
 ### PARAMETERS ###
 
 * if=
---* input file, could be ANY file!
---* default input file is: *walk-dark-light-5.jpg*
+  * input file, could be ANY file!
+  * default input file is: *walk-dark-light-5.jpg*
 
 * of=
-** output file
-** overwrites if already exist
-** default output will go to: *createdImages/tmp.png*
+    * output file
+    * overwrites if already exist
+    * default output will go to: *createdImages/tmp.png*
 
 * pixelSize=
 ** the size 3 bytes of the input file will be represented on the final Image
