@@ -68,7 +68,7 @@ Open a terminal and go into the folder where this script is,
 then just run:
 >    python startGlitch.py if=someimagetoglitch.jpg of=fancy_glitch.jpg
 
-you can configure the glitch-loevel:
+you can configure the glitch-level:
 >    python startGlitch.py if=someimagetoglitch.jpg of=fancy_glitch.jpg glitchLevel=10
 
 **WARNING** It will overwrite the image with the same name as the of= parameter says!
@@ -76,7 +76,7 @@ you can configure the glitch-loevel:
 ### PARAMETERS ###
 
 * if=
-  * input file, should be a **JPG**!
+  * input file, should be a **JPG**
   * default input file is: *walk-dark-light-5.jpg*
 
 * of=
