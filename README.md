@@ -36,14 +36,14 @@ if you want a LARGER Image, just use:
   * default input file is: *walk-dark-light-5.jpg*
 
 * of=
-    * output file
-    * overwrites if already exist
-    * default output will go to: *createdImages/tmp.png*
+  * output file
+  * overwrites if already exist
+  * default output will go to: *createdImages/tmp.png*
 
 * pixelSize=
-** the size 3 bytes of the input file will be represented on the final Image
-** default is 10
+  * the size 3 bytes of the input file will be represented on the final Image
+  * default is 10
 
 * imageX= imageY=
-** the X and Y size/dimensions of the final Image
-** default is 255x255
+  * the X and Y size/dimensions of the final Image
+  * default is 255x255
