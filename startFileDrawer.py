@@ -7,7 +7,10 @@ outputFile = 'createdImages/tmp.png'
 imageX = 255
 imageY = 255
 pixelSize = 10
+fileType = 'jpeg'
 dpi = -1
+modes = []
+
 for arg in sys.argv:
 	if arg == '--help':
 		f = open('README.md')
@@ -26,10 +29,21 @@ for arg in sys.argv:
 		pixelSize = int(arg.replace('pixelSize=', ''))
 	elif arg.startswith('dpi='):
 		dpi = int(arg.replace('dpi=', ''))
+	elif arg.startswith('mode='):
+		modes.append(arg.replace('mode=', ''))
 
 import core
 
-coreWorker = core.core(imageX, imageY, pixelSize, dpi)
+coreWorker = core.core(imageX, imageY, pixelSize, fileType, dpi)
 
 coreWorker.fromFile(inputFile)
+
+for mode in modes:
+	pass
+
 coreWorker.saveImage(outputFile)
+
+if 'glitch' in modes:
+	import glitch
+	gl = glitch.glitch()
+	gl.glitchFile(outputFile)
