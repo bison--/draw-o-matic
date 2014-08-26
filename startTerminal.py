@@ -3,13 +3,15 @@ __author__ = 'bison'
 import sys
 
 inputFile = 'walk-dark-light-5.jpg'
-outputFile = 'tmp.png'
+outputFile = 'createdImages/tmp.png'
 imageX = 255
 imageY = 255
 pixelSize = 10
 for arg in sys.argv:
 	if arg == '--help':
-		print 'comming soon'
+		f = open('README.md')
+		print f.read()
+		f.close()
 		sys.exit()
 	elif arg.startswith('if='):
 		inputFile = arg.replace('if=', '')
