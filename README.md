@@ -32,8 +32,8 @@ if you want a LARGER Image, just use:
 ### PARAMETERS ###
 
 * if=
-** input file, could be ANY file!
-** default input file is: *walk-dark-light-5.jpg*
+--* input file, could be ANY file!
+--* default input file is: *walk-dark-light-5.jpg*
 
 * of=
 ** output file
