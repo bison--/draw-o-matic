@@ -7,7 +7,7 @@ outputFile = 'createdImages/tmp.png'
 imageX = 255
 imageY = 255
 pixelSize = 10
-fileType = 'jpeg'
+fileType = 'png'
 dpi = -1
 modes = []
 
@@ -31,11 +31,12 @@ for arg in sys.argv:
 		dpi = int(arg.replace('dpi=', ''))
 	elif arg.startswith('mode='):
 		modes.append(arg.replace('mode=', ''))
+	elif arg.startswith('fileType='):
+		fileType = arg.replace('fileType=', '')
 
 import core
 
 coreWorker = core.core(imageX, imageY, pixelSize, fileType, dpi)
-
 coreWorker.fromFile(inputFile)
 
 for mode in modes:

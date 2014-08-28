@@ -31,6 +31,9 @@ you can set the pixel size with:
 if you want a LARGER Image, just use:
 >    python startFileDrawer.py if=mF.sh of=fancy.png pixelSize=52 imageX=1080 imageY=1920
 
+for a poster-printable Image you may use:
+>    python startFileDrawer.py imageX=18000 imageY=12000  pixelSize=150 dpi=300
+
 **WARNING** It will overwrite the image with the same name as the of= parameter says!
 
 ### PARAMETERS ###
@@ -60,6 +63,8 @@ if you want a LARGER Image, just use:
   * glitch
     * glitches the final image (works best with jpg ;)
 
+* fileType=
+  * choose the filetype you want as Image (jpeg, png)
 
 ### startGlitch ###
 

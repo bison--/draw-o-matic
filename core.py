@@ -11,7 +11,7 @@ class core(object):
 		self.pixelSize = pixelSize
 		self.img = Image.new( 'RGB', (imageX, imageY), "black") # create a new black image
 		self.pixels = self.img.load() # create the pixel map
-		self.fileType = 'jpeg'
+		self.fileType = fileType
 		self.dpi = dpi
 
 	def getColorTupleFromBytes(self, bytes3):
