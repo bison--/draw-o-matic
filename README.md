@@ -34,6 +34,9 @@ if you want a LARGER Image, just use:
 for a poster-printable Image you may use:
 >    python startFileDrawer.py imageX=18000 imageY=12000  pixelSize=150 dpi=300
 
+so you can draw **/dev/urandom** on a UNIX machine
+>    python startFileDrawer.py if=/dev/urandom of=verry_random.png imageX=18000 imageY=12000  pixelSize=150 dpi=300
+
 **WARNING** It will overwrite the image with the same name as the of= parameter says!
 
 ### PARAMETERS ###
