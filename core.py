@@ -56,7 +56,11 @@ class core(object):
 	def saveImage(self, savePath=''):
 		if not savePath.lower().endswith('.' + self.fileType):
 			savePath += '.' + self.fileType
-		
+
+		# fix sub-path
+		if '/' not in savePath and '\\' not in savePath:
+			savePath = 'createdImages/' + savePath
+
 		# 72 is probably the default value?!
 		if self.dpi > 0:
 			self.img.save(savePath, self.fileType, dpi=(self.dpi, self.dpi))
