@@ -7,14 +7,14 @@ def copyfile(source, dest):
 inputFile = 'walk-dark-light-5.jpg' #'house.jpg'
 outputFile = 'createdImages/tmp_rotate.jpg'
 
-rotations = 0
+rotations = 10
 quality = 23
 degrees = 90
 for arg in sys.argv:
 	if arg == '--help':
 		#TODO: OWN README!
 		print 'DEFAULT VALUES'
-		print 'python startRotate.py if=house.jpg of=createdImages/tmp_rotate.jpg rotations=100 quality=23 degrees=90'
+		print 'python startRotate.py if=walk-dark-light-5.jpg of=createdImages/tmp_rotate.jpg rotations=10 quality=23 degrees=90'
 		#f = open('README.md')
 		#print f.read()
 		#f.close()
@@ -28,7 +28,7 @@ for arg in sys.argv:
 	elif arg.startswith('quality='):
 		quality = int(arg.replace('quality=', ''))
 	elif arg.startswith('degrees='):
-		quality = int(arg.replace('degrees=', ''))
+		degrees = int(arg.replace('degrees=', ''))
 		
 copyfile(inputFile, outputFile)
 
