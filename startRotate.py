@@ -12,14 +12,14 @@ quality = 23
 degrees = 90
 fixSpin = 0
 for arg in sys.argv:
-	if arg == '--help':
+	if arg == '--help' or arg == '-h':
 		#TODO: OWN README!
 		print 'DEFAULT VALUES'
 		print 'python startRotate.py if=walk-dark-light-5.jpg of=createdImages/tmp_rotate.jpg rotations=10 quality=23 degrees=90 fixSpin=0'
 		#f = open('README.md')
 		#print f.read()
 		#f.close()
-		#sys.exit()
+		sys.exit()
 	elif arg.startswith('if='):
 		inputFile = arg.replace('if=', '')
 	elif arg.startswith('of='):

@@ -12,7 +12,7 @@ dpi = -1
 modes = []
 
 for arg in sys.argv:
-	if arg == '--help':
+	if arg == '--help' or arg == '-h':
 		f = open('README.md')
 		print f.read()
 		f.close()
