@@ -2,7 +2,7 @@ import sys
 import Image
 
 def copyfile(source, dest):
-    open(dest, 'w').write(open(source, 'rb').read())
+	open(dest, 'w').write(open(source, 'rb').read())
 
 inputFile = 'walk-dark-light-5.jpg' #'house.jpg'
 outputFile = 'createdImages/tmp_rotate.jpg'
