@@ -6,9 +6,9 @@ class glitch(object):
 	def glitchFile(self, inputFile, outputFile, glitchLevel = 100):
 		fullFileBytes = open(inputFile).read()
 		newFileBytes = ''
-		if len(fullFileBytes) > 1024:
+		if len(fullFileBytes) > 8024:
 			glitchCount = 0
-			glitchTypes = ['zero', 'remove', 'random']
+			glitchTypes = ['zero', 'random']
 			for i in xrange(0, len(fullFileBytes)):
 				if i <= 1024:
 					newFileBytes += fullFileBytes[i]
@@ -18,7 +18,10 @@ class glitch(object):
 					if chooseGlitch == 'zero':
 						newFileBytes += '0'
 					elif chooseGlitch == 'random':
-						newFileBytes += chr(random.randint(0, 255))
+						rnd  = chr(random.randint(0, 255))
+						# try to not set end of file
+						if rnd != 0xd9:
+							newFileBytes += rnd
 					elif chooseGlitch == 'remove':
 						pass
 					glitchCount += 1
