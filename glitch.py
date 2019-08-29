@@ -1,33 +1,34 @@
 __author__ = 'bison'
 
-import random
+import random, sys
 
-class glitch(object):
+class glitch:
 	def glitchFile(self, inputFile, outputFile, glitchLevel = 100):
-		fullFileBytes = open(inputFile).read()
-		newFileBytes = ''
+		fullFileBytes = open(inputFile, 'rb').read()
+		newFileBytes = bytearray()
+
 		if len(fullFileBytes) > 8024:
 			glitchCount = 0
 			glitchTypes = ['zero', 'random']
-			for i in xrange(0, len(fullFileBytes)):
+			for i in range(0, len(fullFileBytes)):
 				if i <= 1024:
-					newFileBytes += fullFileBytes[i]
+					newFileBytes.append(fullFileBytes[i])
 				elif glitchLevel >= random.randint(0, 10000):
 					chooseGlitch = random.choice(glitchTypes)
-					print 'glitching:', chooseGlitch
+					print('glitching:', chooseGlitch)
 					if chooseGlitch == 'zero':
-						newFileBytes += '0'
+						newFileBytes.append(0)
 					elif chooseGlitch == 'random':
-						rnd  = chr(random.randint(0, 255))
+						rnd = random.randint(0, 255)
 						# try to not set end of file
 						if rnd != 0xd9:
-							newFileBytes += rnd
+							newFileBytes.append(rnd)
 					elif chooseGlitch == 'remove':
 						pass
 					glitchCount += 1
 				else:
-					newFileBytes += fullFileBytes[i]
+					newFileBytes.append(fullFileBytes[i])
 
-			print glitchCount, 'glitches'
+			print(glitchCount, 'glitches')
 
-		open(outputFile, 'w').write(newFileBytes)
+		open(outputFile, 'wb').write(newFileBytes)

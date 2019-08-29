@@ -1,6 +1,8 @@
 __author__ = 'bison'
 
 import sys
+import core
+
 
 inputFile = 'walk-dark-light-5.jpg'
 outputFile = 'createdImages/tmp.png'
@@ -14,7 +16,7 @@ modes = []
 for arg in sys.argv:
 	if arg == '--help' or arg == '-h':
 		f = open('README.md')
-		print f.read()
+		print(f.read())
 		f.close()
 		sys.exit()
 	elif arg.startswith('if='):
@@ -34,7 +36,6 @@ for arg in sys.argv:
 	elif arg.startswith('fileType='):
 		fileType = arg.replace('fileType=', '')
 
-import core
 
 coreWorker = core.core(imageX, imageY, pixelSize, fileType, dpi)
 coreWorker.fromFile(inputFile)

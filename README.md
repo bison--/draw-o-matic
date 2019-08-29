@@ -7,7 +7,7 @@
 
 ## REQUIREMENTS ##
 
-* Python 2.7
+* Python 3.6
 * Python PIL (sudo apt-get install python-imaging)
 * Linux (works probably on other platforms ;)
 

@@ -1,5 +1,5 @@
 __author__ = 'bison'
-
+import glitch
 import sys
 
 inputFile = 'walk-dark-light-5.jpg'
@@ -14,6 +14,6 @@ for arg in sys.argv:
 	elif arg.startswith('glitchLevel='):
 		glitchLevel = int(arg.replace('glitchLevel=', ''))
 
-import glitch
+
 gl = glitch.glitch()
 gl.glitchFile(inputFile, outputFile, glitchLevel)

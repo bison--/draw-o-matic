@@ -3,10 +3,12 @@ __author__ = 'bison'
 import sys
 import random
 
-def copyfile(source, dest):
-	open(dest, 'w').write(open(source, 'rb').read())
 
-inputFile = 'walk-dark-light-5.jpg' #'source/house.jpg' #'walk-dark-light-5.jpg' #'house.jpg' #grumpyrainbow.jpeg
+def copyfile(source, dest):
+	open(dest, 'wb').write(open(source, 'rb').read())
+
+
+inputFile = 'walk-dark-light-5.jpg'  # 'source/house.jpg' #'walk-dark-light-5.jpg' #'house.jpg' #grumpyrainbow.jpeg
 outputFile = 'createdImages/tmp_jump.jpg'
 
 switchColors = 'jump'
@@ -16,9 +18,9 @@ jumpY = 0
 
 for arg in sys.argv:
 	if arg == '--help' or arg == '-h':
-		#TODO: OWN README!
-		print 'DEFAULT VALUES'
-		print 'python startRotate.py if=walk-dark-light-5.jpg of=createdImages/tmp_coloring.jpg jumpX=1 jumpY=0'
+		# TODO: OWN README!
+		print('DEFAULT VALUES')
+		print('python startRotate.py if=walk-dark-light-5.jpg of=createdImages/tmp_coloring.jpg jumpX=1 jumpY=0')
 		sys.exit()
 	elif arg.startswith('if='):
 		inputFile = arg.replace('if=', '')
@@ -50,14 +52,14 @@ if jumpX == 1:
 
 				if rowCount > 0 and rowCount < 30:
 					oldPix = pix[x + rowCount, y]
-					newPix = ( oldPix[pixIndex[0]], oldPix[pixIndex[1]], oldPix[pixIndex[2]] )
+					newPix = (oldPix[pixIndex[0]], oldPix[pixIndex[1]], oldPix[pixIndex[2]])
 					pix[x, y] = newPix
 
 if jumpY == 1:
 	rowCount = 0
 	for y in range(width):
 		for x in range(height):
-			rowCount+=1
+			rowCount += 1
 			if x < height-31:
 				pixIndex = [0, 1, 2]
 				#random.shuffle(pixIndex)
