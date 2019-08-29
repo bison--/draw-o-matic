@@ -95,3 +95,7 @@ you can configure the glitch-level:
 * glitchLevel=
   * X out of 1000 bytes will be glitched
   * default is 1 out of 1000 (trust me, its enough for default ;)
+
+## other ##
+
+original tweet: https://twitter.com/bison_42/status/615204140579430400
